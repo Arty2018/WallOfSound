@@ -21,5 +21,15 @@ variable "user_ip" {
 
 variable "name" {
   type = "string"
-  description "Name suffix for bastion"
+  description = "Name suffix for bastion"
+}
+
+variable "zone_name" {
+  type = "string"
+  description = "DNS Zone name"
+}
+
+variable "region" {
+  type = "string"
+  description = "AWS server region"
 }
