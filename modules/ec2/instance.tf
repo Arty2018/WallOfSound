@@ -27,7 +27,7 @@ resource "aws_security_group" "bastion" {
     to_port         = 0
     protocol        = "-1"
     cidr_blocks     = ["0.0.0.0/0"]
-    prefix_list_ids = ["pl-12c4e678"]
+
   }
 }
 
@@ -36,4 +36,5 @@ resource "aws_route53_record" "bastion" {
   name = "${var.name}.${data.aws_route53_zone.dns_zone.name}"
   type = "A"
   records = ["${aws_instance.bastion.public_ip}"]
+  ttl = 60
 }
